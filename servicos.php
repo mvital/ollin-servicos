@@ -105,7 +105,7 @@ function add_servicos_fields( $servicos_id, $servicos ) {
 function servicos_admin_styles() {
 	global $typenow;
 	if( $typenow == 'servicos' ) {
-		wp_enqueue_style( 'servicos_meta_box_styles', plugin_dir_url( __FILE__ ) . 'css/meta-box-styles.css' );
+		wp_enqueue_style( 'servicos_meta_box_styles', plugin_dir_url( __FILE__ ) . 'meta-box-styles.css' );
 	}
 }
 
@@ -119,7 +119,7 @@ function servicos_color_enqueue() {
 	global $typenow;
 	if( $typenow == 'servicos' ) {
 		wp_enqueue_style( 'wp-color-picker' );
-		wp_enqueue_script( 'meta-box-color-js', plugin_dir_url( __FILE__ ) . 'js/meta-box-color.js', array( 'wp-color-picker' ) );
+		wp_enqueue_script( 'meta-box-color-js', plugin_dir_url( __FILE__ ) . 'meta-box-color.js', array( 'wp-color-picker' ) );
 	}
 	?>
 	
@@ -136,7 +136,7 @@ function servicos_image_enqueue() {
         wp_enqueue_media();
  
         // Registers and enqueues the required javascript.
-        wp_register_script( 'meta-box-image', plugin_dir_url( __FILE__ ) . 'js/meta-box-image.js', array( 'jquery' ) );
+        wp_register_script( 'meta-box-image', plugin_dir_url( __FILE__ ) . 'meta-box-image.js', array( 'jquery' ) );
         wp_localize_script( 'meta-box-image', 'meta_image',
             array(
                 'title' => __( 'Escolher/Upload', 'prfx-textdomain' ),
@@ -164,7 +164,7 @@ function include_template_function( $template_path ) {
             if ( $theme_file = locate_template( array ( 'single-servicos.php' ) ) ) {
                 $template_path = $theme_file;
             } else {
-                $template_path = plugin_dir_path( __FILE__ ) . 'files/single-servicos.php';
+                $template_path = plugin_dir_path( __FILE__ ) . 'single-servicos.php';
             }
         }
     }
